@@ -1,145 +1,165 @@
-# 📊 SalesCall Intelligence Dashboard
+# Sales Call Intelligence & Activity Review Dashboard
 
-An intelligent sales analytics dashboard designed to help sales managers review sales calls and meetings, monitor team activity, analyze conversations, and identify opportunities that need attention.
+An enterprise-grade, portfolio-quality full-stack web application designed for sales managers to review sales calls and meetings, monitor team activity, identify high-risk customer escalations, route conversations into transparent review queues, and export cryptographically verified reports.
 
-## 🚀 Project Overview
+Built with **React 19**, **TypeScript**, **Tailwind CSS**, **Recharts**, **Node.js / Express**, and a persistent **SQLite** database.
 
-The **SalesCall Intelligence Dashboard** provides a centralized workspace for managing sales call and meeting information. It helps sales managers understand team performance, track follow-ups, organize conversation records, and make data-driven decisions.
+---
 
-The application also supports repeated data imports, updates to existing records, manual corrections, and organized exports to make sales data management easier.
+## Key Features
 
-## ✨ Key Features
+1. **Managerial Overview Dashboard**:
+   - Split metrics for total conversations, phone calls vs. scheduled meetings.
+   - Live attention queue tracking critical and high-priority accounts.
+   - Real-time follow-up tracking highlighting overdue deadlines and approaching commitments (<48 hours).
+   - Sales representative activity distribution across volume, meeting ratio, and escalations.
+   - Interactive volume-over-time trends and category distribution charts powered by Recharts.
 
-- **Interactive Dashboard:** View important sales activity metrics and performance summaries.
-- **Call & Meeting Management:** Organize and review call and meeting records.
-- **Conversation Analysis:** Identify conversation insights, outcomes, and follow-up requirements.
-- **Conversation Routing:** Categorize and direct conversations based on their status or business needs.
-- **Activity Tracking:** Monitor sales activities and identify pending actions.
-- **Data Import:** Import sales call and meeting data into the dashboard.
-- **Duplicate Handling:** Manage repeated imports to reduce duplicate records.
-- **Record Updates:** Update existing information when new data becomes available.
-- **Manual Corrections:** Correct inaccurate or incomplete records.
-- **Organized Exports:** Export sales information for reporting and further analysis.
-- **Responsive Interface:** Access the dashboard on supported desktop, tablet, and mobile screens.
+2. **Transparent, Explainable Rule-Based Routing**:
+   - Categorizes conversations into 5 practical manager queues:
+     - *Customer concern or escalation*
+     - *Follow-up required*
+     - *Positive opportunity*
+     - *No follow-up needed*
+     - *Unclear; manual review required*
+   - Strict precedence rules with conflict detection (catches when sales reps log "completed successfully" while customer notes contain urgent churn threats or contract breaches).
+   - Exposes explicit citations and date math evidence for every routing decision (no opaque AI black boxes).
 
-## 🛠️ Technology Stack
+3. **Idempotent Ingestion & Duplicate Handling**:
+   - Supports CSV and JSON imports with pre-import validation and row classification:
+     - *New records*
+     - *Exact duplicates* (safe repeated ingestion; importing unchanged data 10x creates 0 duplicates)
+     - *Existing records with updates* (in-place modification with field diffs)
+     - *Potential duplicates* (flags records with missing source IDs matching existing accounts)
+     - *Invalid rows* (isolated without breaking the batch)
+   - Atomic database transactions ensure failed batches never leave partial data.
 
-- **Frontend:** React.js
-- **Build Tool:** Vite
-- **Styling:** CSS
-- **Programming Language:** JavaScript
-- **Version Control:** Git and GitHub
-- **Deployment:** Render Static Site
+4. **Manager Corrections & Audit Trail**:
+   - Allows authorized managers to adjust routing category, priority, customer name, owner, and due dates.
+   - Mandatory reason capture for any adjustment.
+   - Preserves manual corrections against subsequent batch imports according to a documented conflict policy.
+   - Immutable historical audit log tracking field, old value, new value, timestamp, user, and reason.
 
-*Add any backend, database, charting library, or AI service here if your implementation uses one.*
+5. **Cryptographic Export Center & Manifest**:
+   - Live generation of 6 standardized datasets:
+     - `conversations.csv`
+     - `conversations.json`
+     - `attention_queue.csv`
+     - `routing_decisions.csv`
+     - `import_summary.csv`
+     - `correction_audit.csv`
+   - Real-time `manifest.json` reporting exact row counts, byte sizes, active filters, and SHA-256 cryptographic hashes for each file.
 
-## 📁 Project Structure
+6. **Five-Slide Presentation & Demonstration Deck**:
+   - Auto-generated editable `.pptx` PowerPoint file (`presentation/sales-review-findings.pptx`) with 5 dedicated slides grounded in the actual dataset.
+   - Built-in slide deck viewer directly inside the web interface.
 
-A typical React + Vite project structure is shown below. Adjust it to match the actual files in your repository.
+---
 
-```text
-SalesCall-Intelligence_Dashboard/
-├── public/
-│   └── assets/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── pages/
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── index.html
-├── package.json
-├── package-lock.json
-├── vite.config.js
-├── .gitignore
-└── README.md
+## Tech Stack & Architecture
+
+- **Frontend**: React 19, TypeScript, Vite, Tailwind CSS v4, Lucide React icons, Recharts.
+- **Backend**: Node.js, Express, SQL.js (WebAssembly SQLite engine with disk persistence).
+- **File Handling**: Papa Parse (CSV), pptxgenjs (PowerPoint generation), Node.js `crypto` (SHA-256).
+- **Testing**: Vitest for unit and integration testing.
+
+---
+
+## Repository Structure
+
+```
+sales-call-intelligence-dashboard/
+  data/
+    sample_conversations.csv     # 20 rich demonstration conversations
+    sample_conversations.json    # JSON representation of sample dataset
+    sample_updates.csv          # Modified records for testing update diffs
+  exports/
+    conversations.csv           # Full export of current state
+    conversations.json
+    attention_queue.csv         # Prioritized urgent items
+    routing_decisions.csv       # Explanations and evidence
+    import_summary.csv          # Batch ingestion audit history
+    correction_audit.csv        # Field-level change log
+    manifest.json               # Cryptographic manifest with SHA-256 hashes
+  docs/
+    README.md                   # Project overview & documentation
+    data-dictionary.md          # Complete schema definition
+    findings.md                 # 3 evidence-backed findings & rejected alternative
+    architecture.md             # In-depth architectural & transaction design
+  presentation/
+    sales-review-findings.pptx  # 5-slide PowerPoint deck
+  recording/
+    demo-script.md              # 3-minute video narration script
+  server/
+    db.ts                       # SQLite database manager & transactions
+    types.ts                    # TypeScript domain definitions
+    routing.ts                  # Explainable routing engine
+    importer.ts                 # Idempotent import & deduplication logic
+    exporter.ts                 # Real-time export generator & SHA-256 manifest
+    presentation-generator.ts   # PPTX slide deck compiler
+    routes.ts                   # Express REST API endpoints
+  src/
+    components/                 # Modular UI components & drawers
+    App.tsx                     # Main layout & navigation container
+    main.tsx                    # Application entry point
+    index.css                   # Tailwind styles
+  tests/
+    all.test.ts                 # Complete Vitest test suite
+  server.ts                     # Full-stack server entry point (port 3000)
+  package.json
+  LICENSE
 ```
 
-## ⚙️ Installation and Setup
+---
+
+## Getting Started
 
 ### Prerequisites
+- Node.js 20+ (or Node.js 22 LTS)
+- npm or bun
 
-Install the following tools before running the application:
-
-- [Node.js](https://nodejs.org/) (a supported LTS version)
-- npm (included with Node.js)
-- Git
-
-### 1. Clone the repository
-
+### Installation
 ```bash
-git clone https://github.com/PRIYADHARSHINI-2126/SalesCall-Intelligence_Dashboard.git
-```
+# Clone the repository
+git clone https://github.com/your-username/sales-call-intelligence-dashboard.git
+cd sales-call-intelligence-dashboard
 
-### 2. Navigate to the project directory
-
-```bash
-cd SalesCall-Intelligence_Dashboard
-```
-
-### 3. Install dependencies
-
-```bash
+# Install dependencies
 npm install
 ```
 
-### 4. Start the development server
-
+### Running the Application
 ```bash
+# Starts Express server with Vite middleware on http://localhost:3000
 npm run dev
 ```
 
-Open the local URL displayed in your terminal, usually:
-
-`http://localhost:5173`
-
-## 🏗️ Production Build
-
-To create an optimized production build, run:
-
+### Running Tests
 ```bash
+# Executes Vitest test suite (routing, deduplication, updates, manifest)
+npm test
+```
+
+### Building for Production
+```bash
+# Builds frontend to dist/ and prepares server
 npm run build
+npm start
 ```
 
-To preview the production build locally, run:
+---
 
-```bash
-npm run preview
-```
+## Demonstration Workflow (Step-by-Step)
 
- 
-4. Connect th
+1. **Review Dashboard Overview**: Observe baseline KPIs (20 conversations, 8 in attention queue, 3 overdue follow-ups).
+2. **Inspect an Urgent Item**: Click on **NovaHealth Systems** (`CONV-2026-101`) to inspect extracted evidence showing the HIPAA audit dispute.
+3. **Resolve a Conflict**: In **Routing Review**, select **Horizon Media** (`CONV-2026-109`). Notice the contradiction between the rep's "completed" tag and the customer's 30% competitor ultimatum. Click **Override**, set category to `Customer concern or escalation`, enter justification, and save.
+4. **Test Idempotent Deduplication**: In **Data Import**, click **Load Sample Dataset (20 records)** and click **Preview**. Observe that all 20 rows are identified as `Exact Duplicates`. Click **Apply Import** to verify 0 new records are created.
+5. **Test In-Place Updates**: Click **Load Modified Records (Updates demo)**. Preview the diffs for Apex Financial, apply the update, and view the audit record in **Corrections & Audit**.
+6. **Download Verified Exports**: In **Exports & Reports**, view the live `manifest.json` and download any generated report or PowerPoint slide deck.
 
-## 📈 Expected Benefits
+---
 
-- Provides a consolidated view of sales activity.
-- Helps managers identify pending follow-ups and conversations requiring attention.
-- Improves the organization of call and meeting information.
-- Reduces unnecessary duplicate records during repeated imports.
-- Supports corrections and updates to improve data quality.
-- Makes sales reporting and performance review more efficient.
+## License
 
-## 🔮 Future Enhancements
-
-- AI-powered conversation summaries and sentiment analysis.
-- Automated follow-up reminders.
-- Sales performance trends and forecasting.
-- Advanced filtering and reporting.
-- Role-based access for managers and sales representatives.
-- Integration with CRM platforms.
-- Secure cloud database and real-time synchronization.
-
-## 🔒 Data and Security
-
-Protect sensitive sales information and customer details. Do not commit API keys, credentials, private call recordings, or confidential customer data to GitHub. Use environment variables and appropriate access controls when external services are integrated.
-
-## 👩‍💻 Author
-
-**Priyadharshini M.**
-
-B.E. Computer Science and Engineering
-
-GitHub: [PRIYADHARSHINI-2126](https://github.com/PRIYADHARSHINI-2126)
-
-
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

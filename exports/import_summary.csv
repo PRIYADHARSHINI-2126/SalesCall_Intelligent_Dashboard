@@ -1,0 +1,4 @@
+id,filename,file_format,total_rows,new_records,exact_duplicates,updated_records,unchanged_records,potential_duplicates,invalid_records,status,created_at
+BATCH-MVKHPWXE-AM02,test_updates.csv,csv,1,0,0,1,0,0,0,applied,2026-10-23T04:49:08.595Z
+BATCH-MVKHPWX9-62NX,test_batch_1.csv,csv,2,0,2,0,2,0,0,applied,2026-10-23T04:49:08.590Z
+BATCH-MVKHPWWS-XT3H,test_batch_1.csv,csv,2,2,0,0,0,0,0,applied,2026-10-23T04:49:08.582Z

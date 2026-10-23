@@ -1,0 +1,51 @@
+{
+  "export_id": "EXP-MVKHPWXU",
+  "generated_at": "2026-10-23T04:49:08.610Z",
+  "environment": "production-applet",
+  "total_files": 6,
+  "applied_filters": {},
+  "files": [
+    {
+      "filename": "conversations.csv",
+      "description": "Tabular extract of all filtered sales conversations, metadata, and routing decisions.",
+      "row_count": 2,
+      "byte_size": 848,
+      "sha256_hash": "9d787c7e894d75ffbad5f36491fed84509855b3fc8102c9ded8a1d43db5d5e76"
+    },
+    {
+      "filename": "conversations.json",
+      "description": "Structured JSON representation of sales conversations with full evidence and history.",
+      "row_count": 2,
+      "byte_size": 2291,
+      "sha256_hash": "5866e229b41740b03b7af8942d4cb657ea7c0ec6ef422dfae8de65f9feb68102"
+    },
+    {
+      "filename": "attention_queue.csv",
+      "description": "Prioritized manager action queue of urgent, overdue, or escalated conversations.",
+      "row_count": 0,
+      "byte_size": 0,
+      "sha256_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "filename": "routing_decisions.csv",
+      "description": "Explainable routing classification table with reasons and confidence metrics.",
+      "row_count": 2,
+      "byte_size": 731,
+      "sha256_hash": "645cfc4f161aeebce1cf8d09823c0ef6ca018426dce76b984aef604b6b94a049"
+    },
+    {
+      "filename": "import_summary.csv",
+      "description": "Complete audit log of repeated batch imports, row classifications, and changes.",
+      "row_count": 3,
+      "byte_size": 419,
+      "sha256_hash": "38fd8f25fd6d89a79c8ef1069f9a73c86f2eadf10445db9620c08fce7802dbb3"
+    },
+    {
+      "filename": "correction_audit.csv",
+      "description": "Historical audit trail of all manual corrections and system updates.",
+      "row_count": 5,
+      "byte_size": 1061,
+      "sha256_hash": "7d1715d0f9360897069d2a35f447a9bdb07fec3f4a0b0b8f6eaabd581cf08ecb"
+    }
+  ]
+}

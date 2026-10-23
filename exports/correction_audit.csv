@@ -1,0 +1,21 @@
+id,conversation_id,source_id,field_name,old_value,new_value,reason,changed_by,change_type,timestamp
+58,CONV-MVKHQV0Z-1O8,CONV-2026-120,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z
+57,CONV-MVKHQV0Y-K59,CONV-2026-119,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z
+56,CONV-MVKHQV0Y-47R,CONV-2026-118,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z
+55,CONV-MVKHQV0Y-QUL,CONV-2026-117,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z
+54,CONV-MVKHQV0Y-USE,CONV-2026-116,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z
+53,CONV-MVKHQV0Y-UJM,CONV-2026-115,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z
+52,CONV-MVKHQV0Y-YVM,CONV-2026-114,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z
+51,CONV-MVKHQV0Y-042,CONV-2026-113,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z
+50,CONV-MVKHQV0X-3W8,CONV-2026-112,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z
+49,CONV-MVKHQV0X-FOG,CONV-2026-111,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z
+48,CONV-MVKHQV0X-M6W,CONV-2026-110,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z
+47,CONV-MVKHQV0X-W6G,CONV-2026-109,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z
+46,CONV-MVKHQV0W-S3P,CONV-2026-108,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z
+45,CONV-MVKHQV0W-7DW,CONV-2026-107,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z
+44,CONV-MVKHQV0V-ERJ,CONV-2026-106,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z
+43,CONV-MVKHQV0V-P4O,CONV-2026-105,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z
+42,CONV-MVKHQV0V-8CQ,CONV-2026-104,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z
+41,CONV-MVKHQV0V-CJO,CONV-2026-103,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z
+40,CONV-MVKHQV0U-5WD,CONV-2026-102,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z
+39,CONV-MVKHQV0T-3KA,CONV-2026-101,initial_import,,Record created,Imported via batch BATCH-MVKHQV0P-111X (sample_conversations.csv),system_seed@enterprise.internal,initial_import,2026-10-23T04:49:52.780Z

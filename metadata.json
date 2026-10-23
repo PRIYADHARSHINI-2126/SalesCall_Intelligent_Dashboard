@@ -1,0 +1,6 @@
+{
+  "name": "Sales Call Intelligence Dashboard",
+  "description": "Enterprise sales call and meeting review platform with explainable rule-based routing, idempotent imports, and complete audit tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

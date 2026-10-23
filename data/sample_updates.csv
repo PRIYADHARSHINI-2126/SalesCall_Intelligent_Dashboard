@@ -1,0 +1,3 @@
+source_id,customer_name,rep_name,type,call_datetime,duration_seconds,summary,outcome,sentiment,topic,follow_up_required,follow_up_due_date
+CONV-2026-102,Apex Financial,Marcus Vance,meeting,2026-10-19T10:00:00Z,2400,"Finance controller confirmed resolution of $14,200 billing credit memo. Executive sign-off on Q4 expansion approved pending contract signature.",completed_successful,positive,Billing & Invoicing,1,2026-10-28
+CONV-2026-104,Vertex Cloud,David Kim,call,2026-10-22T09:15:00Z,1320,"Revised tier structure sent and approved. Follow-up meeting scheduled with procurement head for contract signing on October 29.",completed_successful,positive,Pricing & Discount,1,2026-10-29
